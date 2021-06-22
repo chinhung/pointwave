@@ -1,4 +1,4 @@
-# PointWave
+# PointWave [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 使用Decorator模式時的工具套件，可有效提升程式碼的可讀性。
 
 ## 範例
