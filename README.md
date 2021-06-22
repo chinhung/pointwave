@@ -1,5 +1,7 @@
 # PointWave [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-使用Decorator模式時的工具套件，可有效提升程式碼的可讀性。
+Helps you to improve the readability of your code when you are using the Decorator pattern.
+
+Makes your code much more readable!
 
 ## How to use
 首先呼叫`PointWave.decoratee`初始化被裝飾的物件，再依序呼叫`decorated`方法，將裝飾器函數傳入。最後呼叫`complete`方法，此時便會依序將物件裝飾後返回：
