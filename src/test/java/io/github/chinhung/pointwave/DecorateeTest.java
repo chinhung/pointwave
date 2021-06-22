@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.function.Function;
 
+import static io.github.chinhung.pointwave.Spy.SpyAssertions.assertThat;
+
 public class DecorateeTest {
 
     @Test
@@ -24,11 +26,11 @@ public class DecorateeTest {
                 .decorated(withSpy3)
                 .complete();
 
-        Spy.SpyAssertions.assertThat(spy1).decorateeIsEmpty();
-        Spy.SpyAssertions.assertThat(spy1).decoratorIs(spy2);
-        Spy.SpyAssertions.assertThat(spy2).decorateeIs(spy1);
-        Spy.SpyAssertions.assertThat(spy2).decoratorIs(spy3);
-        Spy.SpyAssertions.assertThat(spy3).decorateeIs(spy2);
-        Spy.SpyAssertions.assertThat(spy3).decoratorIsEmpty();
+        assertThat(spy1).decorateeIsEmpty();
+        assertThat(spy1).decoratorIs(spy2);
+        assertThat(spy2).decorateeIs(spy1);
+        assertThat(spy2).decoratorIs(spy3);
+        assertThat(spy3).decorateeIs(spy2);
+        assertThat(spy3).decoratorIsEmpty();
     }
 }
