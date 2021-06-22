@@ -1,4 +1,4 @@
-package com.github.chinhung.pointwave;
+package io.github.chinhung.pointwave;
 
 import org.junit.jupiter.api.Assertions;
 
