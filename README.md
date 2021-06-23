@@ -1,4 +1,7 @@
-# PointWave [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# PointWave
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Coverage: 100%](https://img.shields.io/badge/coverage-100%25-brightgreen)
+
 Helps you to improve the readability of your code when you are using the Decorator pattern.
 
 Makes your code much more readable!
