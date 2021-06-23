@@ -132,3 +132,14 @@ Object decorated = PointWave.decoratee(decoratee)
     .decorated(withDecorator3)
     .complete();
 ```
+
+## Todo
+
+- 抽象化`Decoratee`為介面
+- 重構為函數式風格
+- 導入`Github Actions`，用於建構與測試
+- 撰寫`Javadoc`
+  
+## Note
+- 以`Git Flow`管理本專案
+- 增量式開發
