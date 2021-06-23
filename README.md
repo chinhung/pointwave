@@ -14,6 +14,7 @@ dependencies {
 }
 ```
 
+## Tutorial
 首先呼叫`PointWave.decoratee`初始化被裝飾的物件，再依序呼叫`decorated`方法，將裝飾器函數傳入。最後呼叫`complete`方法，此時便會依序將物件裝飾後返回：
 ```java
 Object decorated = PointWave.decoratee(decoratee)
