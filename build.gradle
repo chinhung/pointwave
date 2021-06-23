@@ -2,9 +2,6 @@ plugins {
     id 'java'
 }
 
-group 'io.github.chinhung'
-version '1.0.0'
-
 repositories {
     mavenCentral()
 }
@@ -16,4 +13,77 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+// Metadata and Signing
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+// Javadoc and Sources
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+// Signing Artifacts
+signing {
+    sign configurations.archives
+}
+
+// Metadata Definition and Upload
+group = "io.github.chinhung"
+archivesBaseName = "pointwave"
+version = "1.0.0"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'io.github.chinhung.pointwave'
+                packaging 'jar'
+                // optionally artifactId can be defined here
+                description 'Helps you to improve the readability of your code when you are using the Decorator pattern. Makes your code much more readable!'
+                url 'https://github.com/chinhung/pointwave'
+
+                scm {
+                    connection 'scm:git:git://github.com/chinhung/pointwave.git'
+                    developerConnection 'scm:git:ssh://github.com/chinhung/pointwave.git'
+                    url 'https://github.com/chinhung/pointwave/tree/master'
+                }
+
+                licenses {
+                    license {
+                        name 'MIT License'
+                        url 'https://github.com/chinhung/pointwave/blob/master/LICENSE'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'chinhung'
+                        name 'Chin-Hung Chen'
+                    }
+                }
+            }
+        }
+    }
 }
