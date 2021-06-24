@@ -8,14 +8,14 @@ Helps you to improve the readability of your code when you are using the Decorat
 Makes your code much more readable!
 
 ## How to use
-If you use gradle, add the following dependency in `build.gradle`：
+For Gradle, add the following dependency in `build.gradle`：
 ```groovy
 dependencies {
     implementation 'io.github.chinhung:pointwave:1.0.0'
 }
 ```
 
-If you use maven, add the following dependency in `pom.xml`：
+For Maven, add the following dependency in `pom.xml`：
 ```xml
 <dependency>
     <groupId>io.github.chinhung</groupId>
@@ -24,7 +24,7 @@ If you use maven, add the following dependency in `pom.xml`：
 </dependency>
 ```
 
-For other build tool, please visit the [maven central](https://mvnrepository.com/artifact/io.github.chinhung/pointwave).
+If you use other build tool, please visit the [maven central](https://mvnrepository.com/artifact/io.github.chinhung/pointwave).
 
 ## Tutorial
 首先呼叫`PointWave.decoratee`初始化被裝飾的物件，再依序呼叫`decorated`方法，將裝飾器函數傳入。最後呼叫`complete`方法，此時便會依序將物件裝飾後返回：
