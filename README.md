@@ -1,6 +1,7 @@
 # PointWave
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/chinhung/pointwave/blob/master/LICENSE)
-![Coverage: 100%](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.chinhung/pointwave)
 
 Helps you to improve the readability of your code when you are using the Decorator pattern.
 
