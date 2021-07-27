@@ -27,7 +27,7 @@ For Maven, add the following dependency in `pom.xml`：
 If you use other build tool, please visit the [maven central](https://mvnrepository.com/artifact/io.github.chinhung/pointwave).
 
 ## Tutorial
-首先呼叫`PointWave.decoratee`初始化被裝飾的物件，再依序呼叫`decorated`方法，將裝飾器函數傳入。最後呼叫`complete`方法，此時便會依序將物件裝飾後返回：
+First, call the static method `PointWave.decoratee` to initialize the decoratee. And then, call the method `decorated` with the decorator function as the argument in lambda expression, one by one. The last step is to call `complete` method, which returns the decorated object:
 ```java
 Object decorated = PointWave.decoratee(decoratee)
     .decorated(decoratee -> decorator1Factory.create(decoratee, param1))
@@ -35,9 +35,9 @@ Object decorated = PointWave.decoratee(decoratee)
     .decorated(decoratee -> new Decorator3(decoratee, param3))
     .complete();
 ```
-- 裝飾器函數使用lambda表達式來表達，參數為被裝飾物件，返回值為裝飾完畢後的物件
-- 裝飾的順序是先傳入的先裝飾。以此範例來說，最內層是`decoratee`，第二層是`Decorator1`，第三層是`Decorator2`，最外層是`Decorator3`
-- 支援泛型
+- The decorator function is a function which receives the decoratee and returns the decorated object. 
+- The decorator functions will be applied following the "First In, First Out" rule. For this example, the inner layer is `decoratee`, the second layer is `Decorator1`, the third layer is `Decorator2` and the outer layer is `Decorator3`.
+- Provides generic support.
 
 ## Example
 ```java
