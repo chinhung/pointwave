@@ -35,9 +35,9 @@ Object decorated = PointWave.decoratee(decoratee)
     .decorated(decoratee -> new Decorator3(decoratee, param3))
     .complete();
 ```
-- The decorator function is a function which receives the decoratee and returns the decorated object. 
-- The decorator functions will be applied following the "First In, First Out" rule. For this example, the inner layer is `decoratee`, the second layer is `Decorator1`, the third layer is `Decorator2` and the outer layer is `Decorator3`.
-- Provides generic support.
+- the decorator function is a function which receives the decoratee and returns the decorated object
+- the decorator functions will be applied following the "First In, First Out" rule. For this example, the inner layer of the decorated object is `decoratee`, the second layer is `Decorator1`, the third layer is `Decorator2` and the outer layer is `Decorator3`
+- provides generic support
 
 ## Example
 ```java
