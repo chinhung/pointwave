@@ -134,7 +134,7 @@ However, the code style is imperative.
 
 ### With using PointWave
 
-The code style is continuous and familiar to the builder pattern, which is more meaningful. Also, an appropriately designed api brings more intention of the code to the reader:
+The code style is continuous and similar to the builder pattern, which is more meaningful. Also, an appropriately designed api brings more intention of the code to the reader:
 ```java
 Object decorated = PointWave.decoratee(decoratee)
     .decorated(decoratee -> decorator1Factory.create(decoratee, param1))
@@ -143,7 +143,7 @@ Object decorated = PointWave.decoratee(decoratee)
     .complete();
 ```
 
-Even more, the intention would be more clear if we named the decorator functions appropriately:
+Even more, the intention would be more clear if the decorator functions were named appropriately:
 ```java
 Function withDecorator1 = decoratee -> decorator1Factory.create(decoratee, param1);
 Function withDecorator2 = decoratee -> Decorator2.createInstance(decorated, param2);
