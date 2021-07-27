@@ -96,8 +96,14 @@ assertEquals("Hello World! John Doe! Today is Friday!", decorated.toString());
 ```
 
 
-## 差異比較
-若不使用任何套件，直接手動裝飾物件時，程式碼可能會擠在一行，或者形成金字塔的形狀。以上這2種狀況都讓程式碼難以閱讀：
+## Why use PointWave
+
+### Without using PointWave
+
+The code would be difficult to read if you decorate the object manually without PointWave in the following situations:
+1. a single line code
+2. deeply nested code
+
 ```java
 Object decorated = new Decorator3(Decorator2.createInstance(decorator1Factory.create(decoratee, param1), param2), param3);
 ```
@@ -115,7 +121,20 @@ Object decorated = new Decorator3(
 );
 ```
 
-若使用PointWave，則可以利用lambda表達式，將程式碼「攤平」，此時程式碼相當容易閱讀：
+We could improve the readability of the code by using a temporary local variable:
+
+```java
+Object decorated = decoratee;
+decorated = decorator1Factory.create(decorated, param1);
+decorated = Decorator2.createInstance(decorated, param2);
+decorated = new Decorator3(decorated, param3);
+```
+
+However, the code style is imperative.
+
+### With using PointWave
+
+The code style is continuation and familiar to the builder pattern, which is more meaningful. Also, an appropriately designed api brings more intention of these codes for the reader:
 ```java
 Object decorated = PointWave.decoratee(decoratee)
     .decorated(decoratee -> decorator1Factory.create(decoratee, param1))
@@ -124,15 +143,7 @@ Object decorated = PointWave.decoratee(decoratee)
     .complete();
 ```
 
-使用區域變數的方式也能達到類似的可讀性：
-```java
-Object decorated = decoratee;
-decorated = decorator1Factory.create(decorated, param1);
-decorated = Decorator2.createInstance(decorated, param2);
-decorated = new Decorator3(decorated, param3);
-```
-
-但是透過適當的函數名稱，PointWave的API更能表達其意圖：
+Even more, the intention would be more clear if we named the decorator functions appropriately:
 ```java
 Function withDecorator1 = decoratee -> decorator1Factory.create(decoratee, param1);
 Function withDecorator2 = decoratee -> Decorator2.createInstance(decorated, param2);
@@ -147,11 +158,11 @@ Object decorated = PointWave.decoratee(decoratee)
 
 ## Todo
 
-- 抽象化`Decoratee`為介面
-- 重構為函數式風格
-- 導入`Github Actions`，用於建構與測試
-- 撰寫`Javadoc`
+- abstract `Decoratee` as interface
+- refactor the code to functional style
+- use `Github Actions` to build and test the code
+- write`Javadoc`
   
 ## Note
-- 以`Git Flow`管理本專案
-- 增量式開發
+- use `Git Flow` in this project
+- incremental delivery
