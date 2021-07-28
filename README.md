@@ -100,14 +100,13 @@ assertEquals("Hello World! John Doe! Today is Friday!", decorated.toString());
 
 ### Without using PointWave
 
-The code would be difficult to read if you decorate the object manually without PointWave in the following situations:
+The code is not readable if you decorate the object manually in the following coding style:
 1. a single line code
-2. deeply nested code
-
 ```java
 Object decorated = new Decorator3(Decorator2.createInstance(decorator1Factory.create(decoratee, param1), param2), param3);
 ```
 
+2. deeply nested code
 ```java
 Object decorated = new Decorator3(
     Decorator2.createInstance(
