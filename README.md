@@ -7,7 +7,7 @@ Helps you to improve the readability of your code when you are using the Decorat
 
 Makes your code much more readable!
 
-## How to use
+## Getting Started
 For Gradle, add the following dependency in `build.gradle`：
 ```groovy
 dependencies {
