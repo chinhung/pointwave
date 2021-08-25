@@ -24,7 +24,7 @@ For Maven, add the following dependency in `pom.xml`：
 </dependency>
 ```
 
-If you use other build tool, please visit the [maven central](https://mvnrepository.com/artifact/io.github.chinhung/pointwave).
+If you use other build tool, please visit [Maven Central](https://mvnrepository.com/artifact/io.github.chinhung/pointwave).
 
 ## Tutorial
 First, call the static method `PointWave.decoratee` to initialize the decoratee. And then, call the method `decorated` with the decorator function as the argument in lambda expression, one by one. The last step is to call `complete` method, which returns the decorated object:
@@ -96,9 +96,9 @@ assertEquals("Hello World! John Doe! Today is Friday!", decorated.toString());
 ```
 
 
-## Why use PointWave
+## Why PointWave
 
-### Without using PointWave
+### Without PointWave
 
 The code is not readable if you decorate the object manually in the following coding style:
 1. a single line code
@@ -131,7 +131,7 @@ decorated = new Decorator3(decorated, param3);
 
 However, the code style is imperative.
 
-### With using PointWave
+### With PointWave
 
 The code style is continuous and similar to the builder pattern, which is more meaningful. Also, an appropriately designed api brings more intention of the code to the reader:
 ```java
