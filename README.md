@@ -1,4 +1,4 @@
-# PointWave <img src="https://i.imgur.com/cdTBqH8.jpg" width="80" height="80">
+# PointWave <img src="https://i.imgur.com/cdTBqH8.jpg" width="60" height="60">
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/chinhung/pointwave/blob/master/LICENSE)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.chinhung/pointwave)
